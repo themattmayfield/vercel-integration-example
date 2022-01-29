@@ -116,15 +116,10 @@ export default function Home() {
     )
 
   const handleOnChange = (event) => {
-    const { target } = event
-
-    if (target.name == 'email') {
-      setState((prev) => ({ ...prev, email: target.value }))
-    } else if (target.name == 'name') {
-      setState((prev) => ({ ...prev, name: target.value }))
-    } else if (target.name == 'password') {
-      setState((prev) => ({ ...prev, password: target.value }))
-    }
+    const { target } = event 
+    const { name, value } = target
+    
+    setState((prev) => ({ ...prev, [name]: value }))  
   }
 
   const registerUser = async (event) => {
